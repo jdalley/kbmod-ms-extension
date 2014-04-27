@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+  <head>
+    <title>KBMOD MultiStream Extension</title>
+    <style>
+      body {
+        min-width: 357px;
+        overflow-x: hidden;
+        font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+        font-size: 0.75em;
+      }
+
+      label {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      .addStreamerButton {
+        font-weight: bold;
+      }
+
+      .removeStreamerButton {
+        font-weight: bold;
+        font-size: 1.2em;
+        padding-right: 7px;
+        padding-left: 7px;
+      }
+
+      #actionArea {
+        margin-top: 10px;
+      }
+
+      #openMsButton {
+        width: 224px;
+        height: 35px;
+        margin-right: 0;
+        margin-left: 68px;
+      }
+
+      .enterStream {
+        margin-bottom:5px;
+      }
+
+      .streamInput {
+        width: 220px;
+        height: 23px;
+        line-height: 23px;
+      }
+
+      .clearFix {
+        clear:both;
+      }
+    </style>
+
+    <script src="kbmodhelper.js"></script>
+  </head>
+  <body>
+    <p>You can manually enter streamer names below, or if you are currently viewing a twitch stream click the + button to add it. Default MultiStream layout will be used.</p>
+    <div class="enterStream">
+      <label>Stream 1:</label>
+      <input type="text" class="streamInput" id="stream0" />
+      <button type="button" id="removeStreamerName0" class="removeStreamerButton">-</button>
+      <button type="button" id="addStreamerName0" class="addStreamerButton">+</button>
+    </div>
+    <div class="enterStream">
+      <label>Stream 2:</label>
+      <input type="text" class="streamInput" id="stream1" />
+      <button type="button" id="removeStreamerName1" class="removeStreamerButton">-</button>
+      <button type="button" id="addStreamerName1" class="addStreamerButton">+</button>
+    </div>
+    <div class="enterStream">
+      <label>Stream 3:</label>
+      <input type="text" class="streamInput" id="stream2" />
+      <button type="button" id="removeStreamerName2" class="removeStreamerButton">-</button>
+      <button type="button" id="addStreamerName2" class="addStreamerButton">+</button>
+    </div>
+    <div class="enterStream">
+      <label>Stream 4:</label>
+      <input type="text" class="streamInput" id="stream3" />
+      <button type="button" id="removeStreamerName3" class="removeStreamerButton">-</button>
+      <button type="button" id="addStreamerName3" class="addStreamerButton">+</button>
+    </div>
+    <div class="enterStream">
+      <label>Stream 5:</label>
+      <input type="text" class="streamInput" id="stream4" />
+      <button type="button" id="removeStreamerName4" class="removeStreamerButton">-</button>
+      <button type="button" id="addStreamerName4" class="addStreamerButton">+</button>
+    </div>
+    <div class="enterStream">
+      <label>Stream 6:</label>
+      <input type="text" class="streamInput" id="stream5" />
+      <button type="button" id="removeStreamerName5" class="removeStreamerButton">-</button>
+      <button type="button" id="addStreamerName5" class="addStreamerButton">+</button>
+    </div>
+    <div id="actionArea">
+      <button type="button" id="openMsButton">Open MultiStream</button>
+    </div>
+    <div class="clearFix" />
+  </body>
+</html>
+
