@@ -1,4 +1,4 @@
-// Background Stuff
+// Background console logger
 var bkg = chrome.extension.getBackgroundPage();
 
 // Intended to be used from a single context menu on selected text or hyperlink of a Twitch User.

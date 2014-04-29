@@ -8,6 +8,8 @@
   This is a rough version and I'll likely come back and implement enhancements soon.
   @jeffdalley
 
+  Note: Used vanilla Javascript quite a bit for funsies.
+
 */
 
 // Run as soon as the document's DOM is ready.
@@ -32,22 +34,33 @@ document.addEventListener('DOMContentLoaded', function () {
   // Set onclick for Open MultiStream button
   var openMultiStreamButton = document.getElementById('openMsButton');
   openMultiStreamButton.onclick = openMultiStream;
+
+  // Hook up more details click open/collapse event
+  $('.row .btn').on('click', function(e) {
+    e.preventDefault();
+    var $this = $(this);
+    var $collapse = $this.closest('.collapse-group').find('.collapse');
+    $collapse.collapse('toggle');
+  });
 });
 
 // Sets a given Streamer username from the current tab:
 // Only intended to work if current tab is on a streamer's twitch page or profile.
 function setCurrentStreamerName(e) {
-  var streamId = e.target.id.slice(-1);
-  var streamInput = document.getElementById("stream" + streamId);
   chrome.tabs.query({ active: true, lastFocusedWindow: true},
     function(arrayOfTabs) {
-	  var currTab = arrayOfTabs[0];
+  	  var currTab = arrayOfTabs[0];
 
-	  var twitchUser = currTab.url.replace('/profile', '');
-      twitchUser = twitchUser.substr(twitchUser.lastIndexOf('/') + 1);
-      streamInput.value = twitchUser;
+      if (currTab.url.indexOf("twitch.tv") > -1) {
+        var streamId = e.target.id.slice(-1);
+        var streamInput = document.getElementById("stream" + streamId);
 
-      saveStreams(e);
+    	  var twitchUser = currTab.url.replace('/profile', '');
+        twitchUser = twitchUser.substr(twitchUser.lastIndexOf('/') + 1);
+        streamInput.value = twitchUser;
+
+        saveStreams(e);
+      }
     }
   );
 }

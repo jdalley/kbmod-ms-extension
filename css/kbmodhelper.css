@@ -1,0 +1,56 @@
+body {
+  min-width: 357px;
+  overflow-x: hidden;
+}
+
+label {
+  font-weight: normal;
+}
+
+#actionArea {
+  margin-top: 10px;
+}
+
+#openMsButton {
+  width: 212px;
+  margin-right: 0;
+  margin-left: 64px;
+}
+
+.streamInput {
+  width: 212px;
+}
+
+.detailsText {
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 12px;
+}
+
+.detailsButton {
+  margin-left:10px;
+}
+
+.mainPanel {
+  margin-bottom: 0px;
+}
+
+.addStreamerButton {
+  font-weight: bold;
+}
+
+.removeStreamerButton {
+  font-weight: bold;
+  padding-left: 6px;
+  padding-right: 6px;
+ }
+
+.enterStreamRow {
+  margin-bottom:5px;
+}
+
+.clearFix {
+  clear:both;
+}
