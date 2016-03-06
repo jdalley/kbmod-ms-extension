@@ -13,6 +13,4 @@ When enter channel names in the extension's popup your entries will be saved to 
 will enable you to browse to multiple Twitch pages and click the '+' button to add that stream, while
 persisting your previous additions despite the popup dissapearing.
 
-This is a rough version and I'll likely come back and implement enhancements soon.
-
 @jeffdalley
