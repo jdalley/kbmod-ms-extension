@@ -94,60 +94,19 @@ function clearCurrentStreamerName(e) {
 
 // Construct a KBMOD MultiStream link from filled-in streamer usernames.
 function openMultiStream() {
-  var msUrl = "http://www.kbmod.com/multistream/view/?";
-  var msLayout = "&layout=";
-
+  var msUrl = "https://multistre.am/";
+  
   var inputs = document.getElementsByClassName('streamInput');
   var numInputs = inputs.length;
-  var twitchUsers = [];
 
   for (var i = 0; i < numInputs; i++) {
   	if (inputs[i].value) {
-  		twitchUsers.push(inputs[i].value);
+      msUrl += inputs[i].value + "/";
   	}
   }  
 
-  var numUsers = twitchUsers.length;
-  for (var i = 0; i < numUsers; i++) {
-  	var prefix = "&s";
-  	if (i == 0) {
-  		prefix = "s";
-  	}
-  	msUrl += prefix + i + "=" + twitchUsers[i];
-  }
-
-  /*
-    Default/1st layout id per number of streamers:
-    1: 0
-    2: 3
-    3: 6
-    4: 9
-    5: 12
-    6: 15
-  */
-  var layoutId;
-  switch (numUsers) { 
-    case 1:
-      layoutId = 0;
-      break;
-    case 2:
-      layoutId = 3;
-      break;
-    case 3:
-  	  layoutId = 6;
-  	  break;
-    case 4:
-      layoutId = 9;
-  	  break;
-    case 5:
-  	  layoutId = 12;
-  	  break;
-    case 6:
-      layoutId = 15;
-  	  break;
-  }
-
-  msUrl += msLayout + layoutId;
+  // Just default to layout0
+  msUrl += "layout0";
 
   // Launch a new chrome tab with the newly constructed KBMOD MS Url.
   chrome.tabs.create({
