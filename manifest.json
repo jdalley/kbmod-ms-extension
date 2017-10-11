@@ -3,7 +3,7 @@
   "name": "KBMOD MultiStream Extension",
   "short_name": "kbmod-ms-extension",
   "description": "Extension to quickly create and open a KBMOD MultiStream URL when browsing TwitchTV.",
-  "version": "1.1",
+  "version": "1.2",
   "browser_action": {
     "default_icon": "images/icon32.png",
     "default_popup": "popup.html"
