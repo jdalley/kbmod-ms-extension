@@ -1,7 +1,7 @@
 kbmod-ms-extension
 ==================
 
-Chrome Extension for working with Twitch TV and KBMOD's MultiStream tool (www.kbmod.com/multistream). Current version found [here](https://chrome.google.com/webstore/detail/kbmod-multistream-extensi/njglhbamlnkijhmcpnphfjeboaddnend "Extension in the Chrome Store").
+Chrome Extension for working with Twitch TV and KBMOD's MultiStream tool (https://multistre.am). Current version found [here](https://chrome.google.com/webstore/detail/kbmod-multistream-extensi/njglhbamlnkijhmcpnphfjeboaddnend "Extension in the Chrome Store").
 
 All KBMOD MultiStream code reference/influence and icon usage belongs to KBMOD - www.kbmod.com.
 
