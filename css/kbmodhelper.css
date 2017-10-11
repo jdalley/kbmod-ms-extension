@@ -7,6 +7,10 @@ label {
   font-weight: normal;
 }
 
+input[type=text] {
+  padding-left: 3px;
+}
+
 #actionArea {
   margin-top: 10px;
 }
@@ -15,42 +19,61 @@ label {
   width: 212px;
   margin-right: 0;
   margin-left: 64px;
+  background-color: #919191;
+  border-color: #919191;
 }
 
-.streamInput {
+.stream-input {
   width: 212px;
 }
 
-.detailsText {
-  margin-left:10px;
-  margin-right:10px;
+.details-text {
+  margin-left: 10px;
+  margin-right: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 12px;
 }
 
-.detailsButton {
-  margin-left:10px;
+.details-button {
+  margin-left: 10px;
 }
 
-.mainPanel {
+.main-panel {
   margin-bottom: 0px;
 }
 
-.addStreamerButton {
+.add-streamer-button {
   font-weight: bold;
+  background-color: #4d4d4d;
+  border-color: #4d4d4d;
+}
+.add-streamer-button:hover {
+  background-color: #000000;
+  border-color: #000000;
 }
 
-.removeStreamerButton {
-  font-weight: bold;
+.remove-streamer-button {
   padding-left: 6px;
   padding-right: 6px;
+  background-color: #8b8b8b;
+  border-color: #8b8b8b;
+  margin-left: 3px;
+ }
+ .remove-streamer-button:hover {
+  background-color: #696969;
+  border-color: #696969;
  }
 
-.enterStreamRow {
+.enter-stream-row {
   margin-bottom:5px;
 }
 
-.clearFix {
+.clear-fix {
   clear:both;
+}
+
+.panel-heading.main-panel-heading {
+  background-color: #4d4d4d;
+  border-color: #4d4d4d;
 }

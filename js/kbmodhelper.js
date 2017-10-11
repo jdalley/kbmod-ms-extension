@@ -12,9 +12,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Set onclick functions for all add/remove/input elements.
   // Have to do it this way due to extension rules against inline onclick code.
-  var addStreamerButtons = document.getElementsByClassName('addStreamerButton');
-  var removeStreamerButtons = document.getElementsByClassName('removeStreamerButton');
-  var streamInputs = document.getElementsByClassName('streamInput');
+  var addStreamerButtons = document.getElementsByClassName('add-streamer-button');
+  var removeStreamerButtons = document.getElementsByClassName('remove-streamer-button');
+  var streamInputs = document.getElementsByClassName('stream-input');
 
   // Same number of elements, apply events in one pass.
   var numAddButtons = addStreamerButtons.length;
@@ -96,7 +96,7 @@ function clearCurrentStreamerName(e) {
 function openMultiStream() {
   var msUrl = "https://multistre.am/";
   
-  var inputs = document.getElementsByClassName('streamInput');
+  var inputs = document.getElementsByClassName('stream-input');
   var numInputs = inputs.length;
 
   for (var i = 0; i < numInputs; i++) {
