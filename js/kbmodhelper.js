@@ -12,13 +12,13 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Set onclick functions for all add/remove/input elements.
   // Have to do it this way due to extension rules against inline onclick code.
-  var addStreamerButtons = document.getElementsByClassName('add-streamer-button');
-  var removeStreamerButtons = document.getElementsByClassName('remove-streamer-button');
-  var streamInputs = document.getElementsByClassName('stream-input');
+  let addStreamerButtons = document.getElementsByClassName('add-streamer-button');
+  let removeStreamerButtons = document.getElementsByClassName('remove-streamer-button');
+  let streamInputs = document.getElementsByClassName('stream-input');
 
   // Same number of elements, apply events in one pass.
-  var numAddButtons = addStreamerButtons.length;
-  for (var i = 0; i < numAddButtons; i++) {
+  let numAddButtons = addStreamerButtons.length;
+  for (let i = 0; i < numAddButtons; i++) {
   	addStreamerButtons[i].onclick = setCurrentStreamerName;
   	removeStreamerButtons[i].onclick = clearCurrentStreamerName;
   	streamInputs[i].onkeyup = saveStreams;
@@ -28,14 +28,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Set onclick for Open MultiStream button
-  var openMultiStreamButton = document.getElementById('openMsButton');
+  let openMultiStreamButton = document.getElementById('openMsButton');
   openMultiStreamButton.onclick = openMultiStream;
 
   // Hook up more details click open/collapse event
   $('.row .btn').on('click', function(e) {
     e.preventDefault();
-    var $this = $(this);
-    var $collapse = $this.closest('.collapse-group').find('.collapse');
+    let $this = $(this);
+    let $collapse = $this.closest('.collapse-group').find('.collapse');
     $collapse.collapse('toggle');
   });
 });
@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function setCurrentStreamerName(e) {
   chrome.tabs.query({ active: true, lastFocusedWindow: true},
     function(arrayOfTabs) {
-  	  var currTab = arrayOfTabs[0];
+  	  let currTab = arrayOfTabs[0];
 
       if (currTab.url.indexOf("twitch.tv") > -1) {
-        var streamId = e.target.id.slice(-1);
-        var streamInput = document.getElementById("stream" + streamId);
+        let streamId = e.target.id.slice(-1);
+        let streamInput = document.getElementById("stream" + streamId);
 
-    	  var twitchUser = currTab.url.replace('/profile', '');
+    	  let twitchUser = currTab.url.replace('/profile', '');
         twitchUser = twitchUser.substr(twitchUser.lastIndexOf('/') + 1);
         streamInput.value = twitchUser;
 
@@ -63,10 +63,10 @@ function setCurrentStreamerName(e) {
 
 // Save a given streamer username to storage.
 function saveStreams(e) {
-  var streamId = "stream" + e.target.id.slice(-1);
-  var streamInput = document.getElementById(streamId);
+  let streamId = "stream" + e.target.id.slice(-1);
+  let streamInput = document.getElementById(streamId);
 
-  var obj = {};
+  let obj = {};
   obj[streamId] = streamInput.value;
   chrome.storage.sync.set(obj, function () {
     return false;
@@ -75,8 +75,8 @@ function saveStreams(e) {
 
 // Retrieve and set a given streamer username from storage.
 function loadStreamValue(streamIndex) {
-  var streamId = "stream" + streamIndex;
-  var streamInput = document.getElementById(streamId);
+  let streamId = "stream" + streamIndex;
+  let streamInput = document.getElementById(streamId);
   
   chrome.storage.sync.get(streamId, function (data) {
     if (data[streamId]) {
@@ -87,19 +87,19 @@ function loadStreamValue(streamIndex) {
 
 // Clear a given streamer username input box.
 function clearCurrentStreamerName(e) {
-  var streamToClear = document.getElementById("stream" + e.target.id.slice(-1));
+  let streamToClear = document.getElementById("stream" + e.target.id.slice(-1));
   streamToClear.value = '';
   saveStreams(e);
 }
 
 // Construct a KBMOD MultiStream link from filled-in streamer usernames.
 function openMultiStream() {
-  var msUrl = "https://multistre.am/";
+  let msUrl = "https://multistre.am/";
   
-  var inputs = document.getElementsByClassName('stream-input');
-  var numInputs = inputs.length;
+  let inputs = document.getElementsByClassName('stream-input');
+  let numInputs = inputs.length;
 
-  for (var i = 0; i < numInputs; i++) {
+  for (let i = 0; i < numInputs; i++) {
   	if (inputs[i].value) {
       msUrl += inputs[i].value + "/";
   	}
